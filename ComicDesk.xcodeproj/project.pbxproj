@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		404F54202CA0108300E1F04B /* ComicSaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404F541F2CA0108300E1F04B /* ComicSaveView.swift */; };
+		4055C5AA2C8D98C50041D793 /* ComicTestPaginated.json in Resources */ = {isa = PBXBuildFile; fileRef = 4055C5A92C8D98C50041D793 /* ComicTestPaginated.json */; };
+		405FDC102C9C8206003DC447 /* ComicModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405FDC0F2C9C8206003DC447 /* ComicModelData.swift */; };
+		408B9C542C935C8F00BC2E7B /* ComicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B9C532C935C8F00BC2E7B /* ComicDetailView.swift */; };
 		40C3836A2C875E75000A3A5E /* ComicDeskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383692C875E75000A3A5E /* ComicDeskApp.swift */; };
-		40C3836C2C875E75000A3A5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3836B2C875E75000A3A5E /* ContentView.swift */; };
 		40C3836E2C875E76000A3A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C3836D2C875E76000A3A5E /* Assets.xcassets */; };
 		40C383722C875E76000A3A5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C383712C875E76000A3A5E /* Preview Assets.xcassets */; };
 		40C3837C2C875E76000A3A5E /* ComicDeskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3837B2C875E76000A3A5E /* ComicDeskTests.swift */; };
 		40C383862C875E76000A3A5E /* ComicDeskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383852C875E76000A3A5E /* ComicDeskUITests.swift */; };
 		40C383882C875E76000A3A5E /* ComicDeskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383872C875E76000A3A5E /* ComicDeskUITestsLaunchTests.swift */; };
+		40C3839C2C875FA6000A3A5E /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3839B2C875FA6000A3A5E /* URL.swift */; };
+		40C3839E2C875FEB000A3A5E /* ComicsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3839D2C875FEB000A3A5E /* ComicsData.swift */; };
+		40C383A02C8760B9000A3A5E /* ComicsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C3839F2C8760B9000A3A5E /* ComicsInteractor.swift */; };
+		40C383A22C876110000A3A5E /* ComicDataDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383A12C876110000A3A5E /* ComicDataDTO.swift */; };
+		40C383A42C876183000A3A5E /* ComicModelDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383A32C876183000A3A5E /* ComicModelDTO.swift */; };
+		40C383A62C876202000A3A5E /* ComicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383A52C876202000A3A5E /* ComicModel.swift */; };
+		40C383A82C876437000A3A5E /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383A72C876437000A3A5E /* ComicViewModel.swift */; };
+		40C383AA2C876C5B000A3A5E /* ComicStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383A92C876C5B000A3A5E /* ComicStoreView.swift */; };
+		40C383AC2C876EA6000A3A5E /* ComicPreviewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383AB2C876EA6000A3A5E /* ComicPreviewTest.swift */; };
+		40C383AE2C87759E000A3A5E /* ComicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383AD2C87759E000A3A5E /* ComicView.swift */; };
+		40CC4A602C9893DC00849ADE /* ComicsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC4A5F2C9893DC00849ADE /* ComicsMenuView.swift */; };
+		40F9E8412CA864FB00F1DAA7 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F9E8402CA864FB00F1DAA7 /* FormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		404F541F2CA0108300E1F04B /* ComicSaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicSaveView.swift; sourceTree = "<group>"; };
+		4055C5A92C8D98C50041D793 /* ComicTestPaginated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComicTestPaginated.json; sourceTree = "<group>"; };
+		405FDC0F2C9C8206003DC447 /* ComicModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicModelData.swift; sourceTree = "<group>"; };
+		408B9C532C935C8F00BC2E7B /* ComicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailView.swift; sourceTree = "<group>"; };
 		40C383662C875E75000A3A5E /* ComicDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C383692C875E75000A3A5E /* ComicDeskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDeskApp.swift; sourceTree = "<group>"; };
-		40C3836B2C875E75000A3A5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		40C3836D2C875E76000A3A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C3836F2C875E76000A3A5E /* ComicDesk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComicDesk.entitlements; sourceTree = "<group>"; };
 		40C383712C875E76000A3A5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +63,18 @@
 		40C383812C875E76000A3A5E /* ComicDeskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicDeskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C383852C875E76000A3A5E /* ComicDeskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDeskUITests.swift; sourceTree = "<group>"; };
 		40C383872C875E76000A3A5E /* ComicDeskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDeskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		40C3839B2C875FA6000A3A5E /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		40C3839D2C875FEB000A3A5E /* ComicsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsData.swift; sourceTree = "<group>"; };
+		40C3839F2C8760B9000A3A5E /* ComicsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsInteractor.swift; sourceTree = "<group>"; };
+		40C383A12C876110000A3A5E /* ComicDataDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataDTO.swift; sourceTree = "<group>"; };
+		40C383A32C876183000A3A5E /* ComicModelDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicModelDTO.swift; sourceTree = "<group>"; };
+		40C383A52C876202000A3A5E /* ComicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicModel.swift; sourceTree = "<group>"; };
+		40C383A72C876437000A3A5E /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewModel.swift; sourceTree = "<group>"; };
+		40C383A92C876C5B000A3A5E /* ComicStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicStoreView.swift; sourceTree = "<group>"; };
+		40C383AB2C876EA6000A3A5E /* ComicPreviewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicPreviewTest.swift; sourceTree = "<group>"; };
+		40C383AD2C87759E000A3A5E /* ComicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicView.swift; sourceTree = "<group>"; };
+		40CC4A5F2C9893DC00849ADE /* ComicsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsMenuView.swift; sourceTree = "<group>"; };
+		40F9E8402CA864FB00F1DAA7 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +125,12 @@
 		40C383682C875E75000A3A5E /* ComicDesk */ = {
 			isa = PBXGroup;
 			children = (
-				40C383692C875E75000A3A5E /* ComicDeskApp.swift */,
-				40C3836B2C875E75000A3A5E /* ContentView.swift */,
+				40C383972C875F2D000A3A5E /* System */,
+				40C383962C875F17000A3A5E /* Interface */,
+				40C383952C875E97000A3A5E /* Interactor */,
+				40C383992C875F5F000A3A5E /* Model */,
+				40C3839A2C875F6F000A3A5E /* View */,
+				40C383982C875F50000A3A5E /* ViewModel */,
 				40C3836D2C875E76000A3A5E /* Assets.xcassets */,
 				40C3836F2C875E76000A3A5E /* ComicDesk.entitlements */,
 				40C383702C875E76000A3A5E /* Preview Content */,
@@ -107,7 +141,9 @@
 		40C383702C875E76000A3A5E /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				4055C5A92C8D98C50041D793 /* ComicTestPaginated.json */,
 				40C383712C875E76000A3A5E /* Preview Assets.xcassets */,
+				40C383AB2C876EA6000A3A5E /* ComicPreviewTest.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -127,6 +163,63 @@
 				40C383872C875E76000A3A5E /* ComicDeskUITestsLaunchTests.swift */,
 			);
 			path = ComicDeskUITests;
+			sourceTree = "<group>";
+		};
+		40C383952C875E97000A3A5E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				40C3839D2C875FEB000A3A5E /* ComicsData.swift */,
+				40C3839F2C8760B9000A3A5E /* ComicsInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		40C383962C875F17000A3A5E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				40C3839B2C875FA6000A3A5E /* URL.swift */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		40C383972C875F2D000A3A5E /* System */ = {
+			isa = PBXGroup;
+			children = (
+				40C383692C875E75000A3A5E /* ComicDeskApp.swift */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		40C383982C875F50000A3A5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				40C383A72C876437000A3A5E /* ComicViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		40C383992C875F5F000A3A5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40C383A12C876110000A3A5E /* ComicDataDTO.swift */,
+				40C383A32C876183000A3A5E /* ComicModelDTO.swift */,
+				40C383A52C876202000A3A5E /* ComicModel.swift */,
+				405FDC0F2C9C8206003DC447 /* ComicModelData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		40C3839A2C875F6F000A3A5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40C383A92C876C5B000A3A5E /* ComicStoreView.swift */,
+				40C383AD2C87759E000A3A5E /* ComicView.swift */,
+				408B9C532C935C8F00BC2E7B /* ComicDetailView.swift */,
+				40CC4A5F2C9893DC00849ADE /* ComicsMenuView.swift */,
+				404F541F2CA0108300E1F04B /* ComicSaveView.swift */,
+				40F9E8402CA864FB00F1DAA7 /* FormView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +286,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					40C383652C875E75000A3A5E = {
 						CreatedOnToolsVersion = 15.4;
@@ -235,6 +328,7 @@
 			files = (
 				40C383722C875E76000A3A5E /* Preview Assets.xcassets in Resources */,
 				40C3836E2C875E76000A3A5E /* Assets.xcassets in Resources */,
+				4055C5AA2C8D98C50041D793 /* ComicTestPaginated.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +353,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40C3836C2C875E75000A3A5E /* ContentView.swift in Sources */,
+				40C383A42C876183000A3A5E /* ComicModelDTO.swift in Sources */,
+				40C383AA2C876C5B000A3A5E /* ComicStoreView.swift in Sources */,
 				40C3836A2C875E75000A3A5E /* ComicDeskApp.swift in Sources */,
+				40C383AE2C87759E000A3A5E /* ComicView.swift in Sources */,
+				40C383A02C8760B9000A3A5E /* ComicsInteractor.swift in Sources */,
+				404F54202CA0108300E1F04B /* ComicSaveView.swift in Sources */,
+				408B9C542C935C8F00BC2E7B /* ComicDetailView.swift in Sources */,
+				40C383A22C876110000A3A5E /* ComicDataDTO.swift in Sources */,
+				40F9E8412CA864FB00F1DAA7 /* FormView.swift in Sources */,
+				405FDC102C9C8206003DC447 /* ComicModelData.swift in Sources */,
+				40C3839C2C875FA6000A3A5E /* URL.swift in Sources */,
+				40C383AC2C876EA6000A3A5E /* ComicPreviewTest.swift in Sources */,
+				40C383A82C876437000A3A5E /* ComicViewModel.swift in Sources */,
+				40C3839E2C875FEB000A3A5E /* ComicsData.swift in Sources */,
+				40C383A62C876202000A3A5E /* ComicModel.swift in Sources */,
+				40CC4A602C9893DC00849ADE /* ComicsMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +439,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -392,6 +501,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -419,6 +529,7 @@
 				CODE_SIGN_ENTITLEMENTS = ComicDesk/ComicDesk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ComicDesk/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -440,7 +551,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.munva.ComicDesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,6 +567,7 @@
 				CODE_SIGN_ENTITLEMENTS = ComicDesk/ComicDesk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ComicDesk/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -476,7 +589,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.munva.ComicDesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,10 +600,10 @@
 		40C3838F2C875E76000A3A5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -508,10 +622,10 @@
 		40C383902C875E76000A3A5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -530,9 +644,9 @@
 		40C383922C875E76000A3A5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -551,9 +665,9 @@
 		40C383932C875E76000A3A5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;

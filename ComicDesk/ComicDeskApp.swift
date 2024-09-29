@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ComicDeskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ComicStoreView()
         }
+        .modelContainer(for: ComicModelData.self)
     }
 }

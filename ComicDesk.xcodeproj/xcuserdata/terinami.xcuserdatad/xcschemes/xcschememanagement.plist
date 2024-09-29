@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ComicDesk 1.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ComicDesk.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>40C383652C875E75000A3A5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40C383762C875E76000A3A5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40C383802C875E76000A3A5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
