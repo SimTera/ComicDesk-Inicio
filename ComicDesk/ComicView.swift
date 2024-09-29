@@ -28,8 +28,8 @@ struct ComicView: View {
                     .frame(width: 90, height: 120)
             }
             .layoutPriority(3)
+            
             VStack(alignment: .leading) {
-                
                 Text(comic.title)
                     .font(.title2)
                     .bold()
@@ -42,16 +42,15 @@ struct ComicView: View {
                     .font(.subheadline)
             }
             .layoutPriority(1)
-            
             Spacer()
+            
             HStack {
-                Image(systemName: comic.isFavorit ? "star.fill" : "star") // he de crear el boton para fav
+                Image(systemName: comic.isFavorit ? "star.fill" : "star")
                     .font(.title2)
                     .bold()
                     .foregroundStyle(comic.isFavorit ? .yellow : .gray)
             }
             .layoutPriority(2)
-            
         }
     }
 }
