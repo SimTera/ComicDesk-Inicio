@@ -24,15 +24,14 @@ struct ComicStoreView: View {
                         }
                     }
                     .onAppear {
-                        print("OnAppear de comicsstore")
+//                        print("OnAppear de comicsstore")
                         if !viewmodel.isLoading{
                             Task {
-                                //                        print("Aparecio el comic \(comic.id)") //Pruebas
                                 await viewmodel.checkIsLastItem(comic: comic)
                             }
                         }
                     }
-                    //                            // TODO: 1 Buscar una manera para llamar a vm.checkIsLastItem (comic) si el id es el mismo que el del ultimo elemento del array caargado de comics haremos un page += 1 y volvemos a llamar loadComics() - DONE
+                    // TODO: 1 Buscar una manera para llamar a vm.checkIsLastItem (comic) si el id es el mismo que el del ultimo elemento del array caargado de comics haremos un page += 1 y volvemos a llamar loadComics() - DONE
                 }
             }
             .navigationTitle("Store")
@@ -41,7 +40,7 @@ struct ComicStoreView: View {
             //TODO: 3 search - DONE
             .searchable(text: $viewmodel.searchTerm,prompt: "Search comic")
             .onChange(of: viewmodel.searchTerm) {_, newValue in
-                print("onChange de comicsstore")
+//                print("onChange de comicsstore")
                 if !viewmodel.isLoading{
                     Task{
                         await viewmodel.loadOrSearch(newValue: newValue)
