@@ -13,7 +13,6 @@ struct ComicSaveView: View {
     @Environment(\.modelContext)  var modelContext
     @ObservedObject var viewModel = ComicViewModel()
     
-        
     var body: some View {
         NavigationStack {
             List {
@@ -44,16 +43,15 @@ struct ComicSaveView: View {
                                     .font(.headline)
                                 Text(comic.mainEndDateFormat ?? "")
                                     .font(.subheadline)
+                                
                                 HStack {
                                     Text("Colección completa:").font(.subheadline)
                                     Text(comic.volumes == UserDefaults.standard.integer(forKey: "purchasedVolumes_\(comic.id)") ? "Sí" : "No")
                                         .foregroundColor(comic.volumes == UserDefaults.standard.integer(forKey: "purchasedVolumes_\(comic.id)") ? .green : .red)
                                     Spacer()
                                 }
-                                
                             }
                             .layoutPriority(1)
-                            
                             Spacer()
                             
                             HStack {
@@ -61,7 +59,6 @@ struct ComicSaveView: View {
                                     .font(.title2)
                                     .bold()
                                     .foregroundStyle(comic.isFavorit ? .yellow : .gray)
-                                
                             }
                             .layoutPriority(2)
                         }
@@ -72,7 +69,6 @@ struct ComicSaveView: View {
                 }
             }
             .onAppear {
-                // Cargar los cómics cuando la vista aparece
                 viewModel.loadSaveComic(using: modelContext)
             }
         }
