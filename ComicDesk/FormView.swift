@@ -26,8 +26,6 @@ struct FormView: View {
                     Stepper(value:$purchasedVolumes, in: 0...(comic.volumes ?? 1 )) {
                         Text("Tomos comprados: \(purchasedVolumes)")
                     }
-                    
-                    // Si has comprado al menos 1 tomo, muestra el Stepper para elegir el tomo actual
                     if purchasedVolumes > 0 {
                         Stepper(value: $currentVolume, in: 1...purchasedVolumes) {
                             Text("Tomo por el que va leyendo: \(currentVolume)")
@@ -39,12 +37,8 @@ struct FormView: View {
                     )) {
                         HStack {
                             Text("Colección completa")
-                            
                         }
                     }
-//                    Toggle(isOn: $isComplete) {
-//                        Text("Colección completa")
-//                    }
                 }header: {
                     Text("Colección del cómic")
                 }
@@ -61,7 +55,6 @@ struct FormView: View {
                 presentationMode.wrappedValue.dismiss()
             })
         }
-        
     }
 }
 
