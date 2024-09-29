@@ -12,7 +12,7 @@ import SwiftData
 struct ComicDeskApp: App {
     var body: some Scene {
         WindowGroup {
-            ComicStoreView()
+            MainTabView(viewmodel: ComicViewModel())
         }
         .modelContainer(for: ComicModelData.self)
     }

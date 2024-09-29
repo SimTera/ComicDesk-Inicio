@@ -11,7 +11,7 @@ import SwiftData
 struct ComicSaveView: View {
     
     @Environment(\.modelContext)  var modelContext
-    @ObservedObject var viewModel = ComicViewModel()
+    @ObservedObject var viewModel: ComicViewModel
     
     var body: some View {
         NavigationStack {
@@ -76,6 +76,6 @@ struct ComicSaveView: View {
 }
 
 #Preview {
-    ComicSaveView()
+    ComicSaveView(viewModel: ComicViewModel())
 }
 

@@ -49,7 +49,6 @@ extension ComicModelDTO {
             chapters: chapters,
             themes: themes,
             status: status,
-            
             // Poner valores propios con valor no pueden estar vacios:
             
             isFavorit: false

@@ -88,7 +88,7 @@ struct ComicsMenuView: View {
                 Label("Options", systemImage: "ellipsis.circle")
             }
             .sheet(isPresented: $showingSaveView) {
-                ComicSaveView()
+                ComicSaveView(viewModel: viewmodel)
             }
             
             Button{

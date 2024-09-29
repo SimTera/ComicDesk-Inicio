@@ -27,6 +27,7 @@
 		40C383AC2C876EA6000A3A5E /* ComicPreviewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383AB2C876EA6000A3A5E /* ComicPreviewTest.swift */; };
 		40C383AE2C87759E000A3A5E /* ComicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C383AD2C87759E000A3A5E /* ComicView.swift */; };
 		40CC4A602C9893DC00849ADE /* ComicsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC4A5F2C9893DC00849ADE /* ComicsMenuView.swift */; };
+		40D01FE22CA992A8005CD9F0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D01FE12CA992A8005CD9F0 /* MainTabView.swift */; };
 		40F9E8412CA864FB00F1DAA7 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F9E8402CA864FB00F1DAA7 /* FormView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		40C383AB2C876EA6000A3A5E /* ComicPreviewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicPreviewTest.swift; sourceTree = "<group>"; };
 		40C383AD2C87759E000A3A5E /* ComicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicView.swift; sourceTree = "<group>"; };
 		40CC4A5F2C9893DC00849ADE /* ComicsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsMenuView.swift; sourceTree = "<group>"; };
+		40D01FE12CA992A8005CD9F0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		40F9E8402CA864FB00F1DAA7 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 				40CC4A5F2C9893DC00849ADE /* ComicsMenuView.swift */,
 				404F541F2CA0108300E1F04B /* ComicSaveView.swift */,
 				40F9E8402CA864FB00F1DAA7 /* FormView.swift */,
+				40D01FE12CA992A8005CD9F0 /* MainTabView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				40C383A42C876183000A3A5E /* ComicModelDTO.swift in Sources */,
 				40C383AA2C876C5B000A3A5E /* ComicStoreView.swift in Sources */,
 				40C3836A2C875E75000A3A5E /* ComicDeskApp.swift in Sources */,
+				40D01FE22CA992A8005CD9F0 /* MainTabView.swift in Sources */,
 				40C383AE2C87759E000A3A5E /* ComicView.swift in Sources */,
 				40C383A02C8760B9000A3A5E /* ComicsInteractor.swift in Sources */,
 				404F54202CA0108300E1F04B /* ComicSaveView.swift in Sources */,

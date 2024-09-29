@@ -43,8 +43,12 @@ final class ComicViewModel: ObservableObject {
     
     @MainActor
     func loadComics() async {
-        guard !isLoading else { return }
+        guard !isLoading else {
+            print("Carga de cómics ya en proceso, abortando.")
+            return }
+        print("Iniciando carga de cómics...")
         self.isLoading = true
+        
         do {
             var comicData = try await repository.fetchComics(page: currentPage)
 
@@ -55,11 +59,13 @@ final class ComicViewModel: ObservableObject {
             }
             
             comics += comicData
-            print(comics.count) //Comprobar que se van sumando comics
+            print("Comics cargados: \(comics.count)") //Comprobar que se van sumando comics
         }catch {
             self.error = error
+            print("Error al cargar cómics: \(error)")
         }
         self.isLoading = false
+        print("Carga de cómics finalizada.")
     }
     
     func loadSaveComic(using modelContext: ModelContext) {
@@ -99,8 +105,17 @@ final class ComicViewModel: ObservableObject {
     
 @MainActor
     func loadOrSearch(newValue: String) async {
+        guard !isLoading else {
+            print("Ya se está realizando una búsqueda, abortando...")
+            return
+        }
+        self.isLoading = true
         try? await Task.sleep(for: .seconds(2))
-        if newValue != searchTerm { return }
+        
+        if newValue != searchTerm {
+            self.isLoading = false
+            return
+        }
         
         currentPage = 1
         count = 1
@@ -111,8 +126,9 @@ final class ComicViewModel: ObservableObject {
         }else {
             await searchOnStore()
         }
+        self.isLoading = false
     }
-//    TODO: He de hacer que cargue lo de userDefault para que en estas 3 llamadas hagan lo mismo que para la llamada normal
+//    TODO: He de hacer que cargue lo de userDefault para que en estas 3 llamadas hagan lo mismo que para la llamada normal. -DONE
     
     @MainActor
     func loadComicsByTheme(theme: String) async {
@@ -184,6 +200,7 @@ final class ComicViewModel: ObservableObject {
     func checkIsLastItem(comic: ComicModel) async  {
         guard !isLoading, let lastItem = comics.last else { return }
         if comic.id == lastItem.id {
+            print("Es el último cómic de la lista, cargando más.")
             currentPage += 1
             count += 1
             print(count)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ComicView: View {
     @Environment(\.modelContext) private var modelContext
-    @ObservedObject private var vm = ComicViewModel()
+    @ObservedObject var vm: ComicViewModel
     
     var comic: ComicModel
     
@@ -56,5 +56,5 @@ struct ComicView: View {
 }
 
 #Preview {
-    ComicView(comic: .previewComic)
+    ComicView(vm: ComicViewModel(), comic: .previewComic)
 }

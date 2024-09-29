@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FormView: View {
     var comic: ComicModel
-    @ObservedObject var vm = ComicViewModel()
+    @ObservedObject var vm: ComicViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.modelContext) var modelContext
     
@@ -55,6 +55,6 @@ struct FormView: View {
     }
 }
 
-#Preview {
-    FormView(comic: .previewComic)
-}
+//#Preview {
+//    FormView(comic: .previewComic, vm: ComicViewModel)
+//}

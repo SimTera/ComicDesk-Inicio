@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @ObservedObject var viewmodel: ComicViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            ComicStoreView()
+                .tabItem{ Label("Home", systemImage: "house.and.flag") }
+            ComicSaveView(viewModel: viewmodel)
+                .tabItem{ Label("Library", systemImage: "books.vertical")}
+        }
     }
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(viewmodel: ComicViewModel())
 }

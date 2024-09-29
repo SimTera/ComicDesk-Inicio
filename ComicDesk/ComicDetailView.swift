@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ComicDetailView: View {
     @Environment(\.modelContext) var modelContext
-    @ObservedObject var vm = ComicViewModel()
+    @ObservedObject var vm: ComicViewModel
     @State var isShowingSheet = false
     
     var comic: ComicModel
@@ -48,7 +48,7 @@ struct ComicDetailView: View {
                             .font(.title2)
                     }
                     .sheet(isPresented: $isShowingSheet) {
-                            FormView(comic: comic)
+                        FormView(comic: comic, vm: ComicViewModel())
                         }
                 }
                 .padding()
@@ -104,5 +104,5 @@ struct ComicDetailView: View {
 }
 
 #Preview {
-    ComicDetailView(comic: .previewComic)
+    ComicDetailView(vm: ComicViewModel(), comic: .previewComic)
 }
