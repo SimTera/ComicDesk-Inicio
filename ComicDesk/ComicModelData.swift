@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class ComicModelData: Identifiable, Hashable {
-    @Attribute(.unique) var id: Int // con esto hace que no lo pueda guardar mas de una vez
+    @Attribute(.unique) var id: Int
     var title: String
     var titleEnglish: String?
     var titleJapanese: String?
@@ -29,25 +29,25 @@ class ComicModelData: Identifiable, Hashable {
     var themes: [Theme]
     var status: String
     
-    //Valores propios:
+    //Valores propios y cambios de formato:
     var isFavorit: Bool
-    
-    
-    //Aqui he de hacer los cambios de formato de imagen a url valida y fechas etc:
 
     var mainPictureFormatURL: URL?{
         let urlString = mainPicture.trimmingCharacters(in: CharacterSet(charactersIn: "\""))
         return URL(string: urlString)
     }
+    
     var mainStartDateFormat: String?{
         guard let dateString = startDate?.trimmingCharacters(in: CharacterSet(charactersIn: "T00:00:00Z")) else { return "faile" }
         return String?(dateString)
     }
+    
     var mainEndDateFormat: String?{
         guard let dateString = endDate?.trimmingCharacters(in: CharacterSet(charactersIn: "T00:00:00Z")) else { return "faile" }
         return String?(dateString)
     }
-    init(from model: ComicModel) { // Acepto un comicmodel como inicializador para que me sea mas facil el guardar asi me ahorro el mapeo
+    
+    init(from model: ComicModel) {
         self.id = model.id
         self.title = model.title
         self.titleEnglish = model.titleEnglish
