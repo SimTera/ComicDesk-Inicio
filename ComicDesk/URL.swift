@@ -35,12 +35,12 @@ extension URL {
     }
     
     static func comicSearchContainsURL(page: Int)-> URL {
-        URLBase.appending(path: "search/mangasContains")// hay que añadir /texto a buscar
+        URLBase.appending(path: "search/mangasContains")
             .appending(queryItems: [.pageQuery(page: page)])
     }
 }
 
-extension URLQueryItem { //Esto es una fomra mas elegante de hacer los querys
+extension URLQueryItem {
     static func pageQuery (page: Int) -> URLQueryItem {
         URLQueryItem(name: "page", value: "\(page)")
     }
@@ -49,10 +49,9 @@ extension URLQueryItem { //Esto es una fomra mas elegante de hacer los querys
 extension URLRequest {
     
     static func getRequest(url: URL) -> URLRequest {
-        var request = URLRequest(url: url) //esta url es la del getrequest de arriba
-        // creamos  una request en la linea 15 y creamos varias request
-        request.setValue("Token", forHTTPHeaderField: "Autorizacion") //esto son headers obligatorios que te dice la API
-        request.setValue("application/json", forHTTPHeaderField: "accept") //este tambien en mi caso no se usara a menos que pida el token cunado llegue
+        var request = URLRequest(url: url)
+        request.setValue("Token", forHTTPHeaderField: "Autorizacion")
+        request.setValue("application/json", forHTTPHeaderField: "accept")
         
         return request
     }
