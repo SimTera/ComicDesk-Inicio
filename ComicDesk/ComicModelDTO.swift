@@ -31,7 +31,6 @@ struct ComicModelDTO: Codable {
 extension ComicModelDTO {
     var mapToComicModel: ComicModel {
         ComicModel(
-            // tienen que haber todos los parametros que tenga en ComicModel recordar poner coma
             id: id,
             title: title,
             titleEnglish: titleEnglish,
@@ -54,8 +53,6 @@ extension ComicModelDTO {
             // Poner valores propios con valor no pueden estar vacios:
             
             isFavorit: false
-//            isSave: false
-
         )
     }
 }
@@ -64,16 +61,19 @@ struct Genre: Codable, Identifiable, Hashable{
     let id: String
     let genre: String
 }
+
 struct Demographic: Codable, Identifiable, Hashable{
     let id: String
     let demographic: String
 }
+
 struct Author: Codable, Identifiable, Hashable{
     let id: String
     let lastName: String
     let firstName: String
     let role: String
 }
+
 struct Theme: Codable, Identifiable, Hashable{
     let id: String
     let theme: String
