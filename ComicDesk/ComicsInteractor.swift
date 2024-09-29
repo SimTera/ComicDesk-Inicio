@@ -22,7 +22,6 @@ struct ComicsInteractor: ComicsInteractorProtocol {
         let (data, _) = try await URLSession.shared.data(from: .comicListURL(page: page))
         
         return try JSONDecoder().decode(ComicDataDTO.self, from: data).items.map(\.mapToComicModel)
-        
     }
 }
 
