@@ -9,16 +9,15 @@ import SwiftUI
 
 struct FormView: View {
     var comic: ComicModel
+    @ObservedObject var vm = ComicViewModel()
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.modelContext) var modelContext
+    
     @State var purchasedVolumes: Int = 0
     @State var currentVolume: Int = 0
     @State var chapters: Int?
     @State var isComplete: Bool = false
     
-    @ObservedObject var vm = ComicViewModel()
-    
-    @Environment(\.presentationMode) var presentationMode  // Para cerrar el sheet
-    @Environment(\.modelContext) var modelContext
-
     var body: some View {
         NavigationView {
             Form {
@@ -33,7 +32,7 @@ struct FormView: View {
                     }
                     Toggle(isOn: Binding(
                         get: { purchasedVolumes == (comic.volumes ?? 0) },
-                        set: { _ in } // No permite que el usuario cambie el toggle manualmente
+                        set: { _ in }
                     )) {
                         HStack {
                             Text("Colección completa")
@@ -44,16 +43,14 @@ struct FormView: View {
                 }
             }
             .navigationBarTitle("Gestionar colección", displayMode: .inline)
-            .navigationBarItems(leading: Button("Cancelar") {
-                // Cierra el sheet sin hacer nada
-                presentationMode.wrappedValue.dismiss()
-            }, trailing: Button("Guardar") {
-                // Llama al método de guardado en el ViewModel
-                vm.saveDataAndFavorite(comic, purchasedVolumes: purchasedVolumes, currentVolume: currentVolume, isComplete: isComplete, using: modelContext)
-                
-                // Cierra el sheet
-                presentationMode.wrappedValue.dismiss()
-            })
+            .navigationBarItems(
+                leading: Button("Cancelar") {
+                    presentationMode.wrappedValue.dismiss()
+                },
+                trailing: Button("Guardar") {
+                    vm.saveDataAndFavorite(comic, purchasedVolumes: purchasedVolumes, currentVolume: currentVolume, isComplete: isComplete, using: modelContext)
+                    presentationMode.wrappedValue.dismiss()
+                })
         }
     }
 }
