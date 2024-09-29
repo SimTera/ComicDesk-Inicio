@@ -21,38 +21,38 @@ struct ComicDetailView: View {
                     images
                         .resizable()
                         .scaledToFit()
-                }placeholder: { // he de ponerlo para poder formatear la imagen
+                }placeholder: {
                     Image(systemName: "book")
                         .resizable()
                         .scaledToFit()
                 }
+                
                 Text(comic.titleJapanese ?? "").font(.title3)
+                
                 HStack {
                     Button{
                         vm.toggleIsFavorit(for: comic, using: modelContext)
 
                     }label: {
-                        Image(systemName: "star.fill") // he de crear el boton para fav
+                        Image(systemName: "star.fill")
                             .font(.title2)
                             .bold()
-                        //                        .symbolVariant(comic.isFavorit ? .fill : .none)
                             .foregroundStyle(comic.isFavorit ? .yellow : .gray)
-//                        vm.isFavorite(comic: comic)
                     }
                     
                     Button {
-                        //                    TODO: Este boton lo que deberia es abrirme un menu diciendome que numeros de volumenes tnego y el que quiero y que se guarde cuando le de al boton de continuar o de confirmar.
+                        //                    TODO: Este boton lo que deberia es abrirme un menu diciendome que numeros de volumenes tnego y el que quiero y que se guarde cuando le de al boton de continuar o de confirmar -DONE
                         isShowingSheet = true
                     }label: {
                         Image(systemName: "square.and.arrow.down")
                             .font(.title2)
-//                            .bold()
                     }
                     .sheet(isPresented: $isShowingSheet) {
-                            FormView(comic: comic)  // Aquí pasas el comic que estás detallando
+                            FormView(comic: comic)
                         }
                 }
                 .padding()
+                
                 Grid{
                     GridRow{
                         Text("Volumes")
@@ -63,9 +63,9 @@ struct ComicDetailView: View {
                         Text("\(comic.volumes ?? 0)")
                         Text("\(comic.chapters ?? 0)")
                     }
-                    
                 }
                 Divider()
+                
                 HStack{
                     Text("Start: \(comic.mainStartDateFormat ?? "")")
                         .padding(.horizontal)
@@ -87,15 +87,16 @@ struct ComicDetailView: View {
                     Divider()
                 }
                 .padding(.vertical)
+                
                 Section("Synopsis"){
                     Text("\(comic.sypnosis ?? " ")")
                         .padding()
                 }
+                
                 Section("Background"){
                     Text("\(comic.background ?? "")")
                         .padding()
                 }
-                
             }
         }
         .navigationTitle(comic.title)
