@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 final class ComicViewModel: ObservableObject {
-    //todo lo que es publish se tiene que hacer dentro del await Mainactor.run
+
     @Published var comics: [ComicModel] = []
     @Published var savedComics: [ComicModelData] = []
     @Published var currentPage: Int = 1
@@ -22,13 +22,11 @@ final class ComicViewModel: ObservableObject {
     @Published var isFiltering: Bool = false
     @Published var isFavorit = false
     @Published var volumes: Int?
-
-    
     
     var currentFilter: FilterType?
     var count = 0 // para comprobar cuantas paginas se llaman
     private var repository: ComicsInteractorProtocol
-    private let totalPages = 6484 //es el total de paginas en per 10.
+    private let totalPages = 6484
     
     init(repository: ComicsInteractorProtocol = ComicsInteractor()) {
         self.repository = repository
@@ -36,31 +34,28 @@ final class ComicViewModel: ObservableObject {
             await loadComics()
         }
     }
-// creo un enum para gestionar el filtrado por genero tema o demografia
-    enum FilterType { //tiene que ser codable para ser usada en swiftdata
+
+    enum FilterType {
         case theme(String)
         case genre(String)
         case demographic(String)
     }
     
-    @MainActor //he de hacerlo pasar por el hilo principal
+    @MainActor
     func loadComics() async {
         guard !isLoading else { return }
         self.isLoading = true
         do {
             var comicData = try await repository.fetchComics(page: currentPage)
-            // recuperamos los favoritos para que persista
+
             for i in 0..<comicData.count {
                 let comicID = comicData[i].id
                 let isFavorit = UserDefaults.standard.bool(forKey: "isFavorit_\(comicID)")
                 comicData[i].isFavorit = isFavorit
             }
+            
             comics += comicData
-//            await MainActor.run { //esto es para darle los datos que hemos guardado en comicdata sin hacer toda la func @MainActor
-//                comics = comicData
-//            }
             print(comics.count) //Comprobar que se van sumando comics
-
         }catch {
             self.error = error
         }
@@ -71,16 +66,16 @@ final class ComicViewModel: ObservableObject {
         do {
             let descriptor = FetchDescriptor<ComicModelData>()
             let request = try modelContext.fetch(descriptor)
-            // Sincronizamos el estado de 'isFavorit' con UserDefaults
+
             let syncedComics = request.map { comic in
-                let updatedComic = comic //preguntar si esto se ha de poner let como me comentaba
+                let updatedComic = comic
                 let isFavorit = UserDefaults.standard.bool(forKey: "isFavorit_\(comic.id)")
                 updatedComic.isFavorit = isFavorit
                 return updatedComic
             }
+            
             savedComics = syncedComics
             print("Comics load ok ")
-            
         }catch {
             print("Error to load comic: \(error)")
         }
@@ -117,7 +112,6 @@ final class ComicViewModel: ObservableObject {
             await searchOnStore()
         }
     }
-    
 //    TODO: He de hacer que cargue lo de userDefault para que en estas 3 llamadas hagan lo mismo que para la llamada normal
     
     @MainActor
@@ -135,7 +129,7 @@ final class ComicViewModel: ObservableObject {
                 comicData[i].isFavorit = isFavorit
             }
             comics += comicData
-            print(comics.count) //comprobar que se realiza
+            print(comics.count)
         }catch {
             self.error = error
         }
@@ -157,7 +151,7 @@ final class ComicViewModel: ObservableObject {
                 comicData[i].isFavorit = isFavorit
             }
             comics += comicData
-            print(comics.count) //comprobar que se realiza
+            print(comics.count)
         }catch {
             self.error = error
         }
@@ -179,7 +173,7 @@ final class ComicViewModel: ObservableObject {
                 comicData[i].isFavorit = isFavorit
             }
             comics += comicData
-            print(comics.count) //comprobar que se realiza
+            print(comics.count)
         }catch {
             self.error = error
         }
@@ -188,7 +182,7 @@ final class ComicViewModel: ObservableObject {
 
     @MainActor
     func checkIsLastItem(comic: ComicModel) async  {
-        guard !isLoading, let lastItem = comics.last else { return } // si no me pide un opcional en la logica y no quiero
+        guard !isLoading, let lastItem = comics.last else { return }
         if comic.id == lastItem.id {
             currentPage += 1
             count += 1
@@ -224,7 +218,7 @@ final class ComicViewModel: ObservableObject {
     func saveDataAndFavorite(_ comic: ComicModel,purchasedVolumes: Int, currentVolume: Int, isComplete: Bool, using modelContext: ModelContext) {
         do {
             // creo el JSON
-            let comicData = ComicModelData(from: comic) //este es el init para no realizar el mapeo, hay que ver is es mejor esto o el mapeo.
+            let comicData = ComicModelData(from: comic)
             print("Este es el id del comic: \(comicData.id)")
             
             //sincronizamos el isFavorit con los que tengo en user default
@@ -236,23 +230,19 @@ final class ComicViewModel: ObservableObject {
             UserDefaults.standard.set(purchasedVolumes, forKey: "purchasedVolumes_\(comic.id)")
             UserDefaults.standard.set(currentVolume, forKey: "currentVolume_\(comic.id)")
             UserDefaults.standard.set(isComplete, forKey: "isComplete_\(comic.id)")
-            try modelContext.save() // hay que comprobar si no hace falta
+            try modelContext.save()
             
         }catch {
-            
             print("Error to save the comic: \(comic.id)")
             print(error)
         }
-
     }
-    
-
-    
+        
     func deleteComic(at offsets: IndexSet, using modelContext: ModelContext) {
         offsets.forEach { index in
                     let comicToDelete = savedComics[index]
                     modelContext.delete(comicToDelete)
-                    
+            
                     do {
                         try modelContext.save()
                         print("Comic eliminado: \(comicToDelete.id)")
@@ -261,7 +251,6 @@ final class ComicViewModel: ObservableObject {
                     }
                 }
     }
-
     // TODO: Revisar porque no entra desde el detail desde el vm, intento esforzarme antes de preguntar a chatgpt, se le pueden pedir pistas vale mas o menos voy por el camino, toca revisar como acabar de hacer esto- DONE
     
     @MainActor
@@ -288,4 +277,3 @@ final class ComicViewModel: ObservableObject {
         }
     }
 }
-
