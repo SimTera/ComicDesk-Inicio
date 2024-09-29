@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ComicStoreView: View {
-    @Environment(\.modelContext) var modelContext // esto ha de ir donde esta el boton
+    @Environment(\.modelContext) var modelContext
     
-    @StateObject var viewmodel = ComicViewModel() // En esta vista debe de llamarse con este binding
+    @StateObject var viewmodel = ComicViewModel()
     // TODO: 2 Crearme la preview test con el paginado de muestra y para comprobar el paginado bien abrir el simulador. Poder explicar bien el codigo - DONE
     var body: some View {
         NavigationStack{
@@ -18,14 +18,14 @@ struct ComicStoreView: View {
                 ForEach(viewmodel.comics) { comic in
                     Section("ID: \(comic.id)") {
                                 NavigationLink {
-                                    ComicDetailView(vm: viewmodel, comic: comic) // Le paso el view model a la vista, tiene que ser en orden
+                                    ComicDetailView(vm: viewmodel, comic: comic)
                                 } label: {
                                     ComicView(comic: comic)
                                 }
                             }
                     .onAppear {
                         Task {
-    //                        print("Aparecio el comic \(comic.id)")
+    //                        print("Aparecio el comic \(comic.id)") //Pruebas
                             await viewmodel.checkIsLastItem(comic: comic)
                         }
                     }
@@ -53,6 +53,5 @@ struct ComicStoreView: View {
 }
 
 #Preview {
-    // Asi solo me carga del test en el canva pero en simulador llama a BD
     ComicStoreView(viewmodel: ComicViewModel(repository: ComicListInteractorTest()))
 }
