@@ -54,7 +54,3 @@ struct FormView: View {
         }
     }
 }
-
-//#Preview {
-//    FormView(comic: .previewComic, vm: ComicViewModel)
-//}
